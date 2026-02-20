@@ -1,5 +1,9 @@
 # CWE-Bench-Java-Extended
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18691625.svg)](https://doi.org/10.5281/zenodo.18691625)
+
+The complete dataset with experimental data is available at: Hu, X. (2026). *CWE-Bench-Java-Extended: A Java Vulnerability Benchmark Dataset* [Data set]. Zenodo. https://doi.org/10.5281/zenodo.18691625
+
 A comprehensive Java vulnerability benchmark dataset containing **130 vulnerabilities** across **12 CWE categories** from **103 real-world projects**, enabling realistic evaluation of Java vulnerability detection approaches.
 
 | CWE-ID  | CVE Count |
@@ -86,3 +90,22 @@ Each row in `data/fix_info.csv` looks like the following.
 - `method`: the name of the method that is fixed
 - `method_start`, `method_end`: the start and end line number of the method. Same as above, some entries may have this field empty
 - `signature`: the signature of the method. Note that we might have multiple overloaded methods with the same name but with different signatures
+
+## Experiments
+
+```
+- experiments/
+  - dataset(IRIS)/       # IRIS analysis results
+  - dataset(Tai-e)/      # Tai-e analysis results
+  - dataset(TaiLL-Me)/   # TaiLL-Me analysis results
+  - results/             # Evaluation results
+```
+
+The `experiments` folder contains analysis outputs from different taint analysis tools:
+
+- `dataset(IRIS)`: Results from IRIS static analysis tool
+- `dataset(Tai-e)`: Results from Tai-e static analysis framework
+- `dataset(TaiLL-Me)`: Results from TaiLL-Me (our approach), including LLM-based chain rankings
+
+Each subfolder contains 130 project directories matching the `dataset` structure, with analysis records such as detected taint flows and vulnerability chains.
+
