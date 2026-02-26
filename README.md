@@ -1,9 +1,5 @@
 # CWE-Bench-Java-Extended
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18691625.svg)](https://doi.org/10.5281/zenodo.18691625)
-
-The complete dataset with full experimental data is available at: Hu, X. (2026). *CWE-Bench-Java-Extended: A Java Vulnerability Benchmark Dataset* [Data set]. Zenodo. https://doi.org/10.5281/zenodo.18691625
-
 A comprehensive Java vulnerability benchmark dataset containing **130 vulnerabilities** across **12 CWE categories** from **103 real-world projects**, enabling realistic evaluation of Java vulnerability detection approaches.
 
 | CWE-ID  | CVE Count |
