@@ -119,7 +119,7 @@ The `experiments/results/` directory contains evaluation results and cost analys
 
 Comparative evaluation results for different approaches on the CWE-Bench-Java-Extended dataset:
 
-- **TaiLL-Me+claude.csv**: TaiLL-Me with Claude Sonnet 4.5 LLM
+- **TaiLL-Me+claude.csv**: TaiLL-Me with claude-sonnet-4.5
 - **TaiLL-Me+gemini-2.5-flash-nothinking.csv**: TaiLL-Me with Gemini 2.5 Flash (no thinking mode)
 - **TaiLL-Me+gpt-5-mini.csv**: TaiLL-Me with GPT-5 Mini
 - **TaiLL-Me+qwen3-coder-plus.csv**: TaiLL-Me with Qwen3-Coder-Plus
