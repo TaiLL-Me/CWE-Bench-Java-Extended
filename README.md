@@ -91,11 +91,31 @@ Each row in `data/fix_info.csv` looks like the following.
 - `method_start`, `method_end`: the start and end line number of the method. Same as above, some entries may have this field empty
 - `signature`: the signature of the method. Note that we might have multiple overloaded methods with the same name but with different signatures
 
-## Evaluation Results
+## Experiments
 
-The `experiments/results/` directory contains evaluation results and cost analysis. The complete experimental data (including IRIS, Tai-e, and TaiLL-Me analysis outputs) is available in the full dataset on Zenodo.
+```
+- experiments/
+  - dataset(IRIS)/       # IRIS analysis results (available on Zenodo)
+  - dataset(Tai-e)/      # Tai-e analysis results (available on Zenodo)
+  - dataset(TaiLL-Me)/   # TaiLL-Me analysis results (available on Zenodo)
+  - results/             # Evaluation results
+```
 
-### Evaluation Results (CSV)
+The `experiments` folder contains analysis outputs from different taint analysis tools:
+
+- `dataset(IRIS)`: Results from IRIS static analysis tool
+- `dataset(Tai-e)`: Results from Tai-e static analysis framework
+- `dataset(TaiLL-Me)`: Results from TaiLL-Me (our approach), including LLM-based chain rankings
+
+Each subfolder contains 130 project directories matching the `dataset` structure, with analysis records such as detected taint flows and vulnerability chains.
+
+**Note**: Due to their large size, the `dataset(IRIS)`, `dataset(Tai-e)`, and `dataset(TaiLL-Me)` directories are not included in this GitHub repository. The complete experimental data is available in the full dataset on Zenodo.
+
+### Results Files
+
+The `experiments/results/` directory contains evaluation results and cost analysis:
+
+#### Evaluation Results (CSV)
 
 Comparative evaluation results for different approaches on the CWE-Bench-Java-Extended dataset:
 
