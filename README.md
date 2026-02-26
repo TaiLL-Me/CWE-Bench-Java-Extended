@@ -119,11 +119,11 @@ The `experiments/results/` directory contains evaluation results and cost analys
 
 Comparative evaluation results for different approaches on the CWE-Bench-Java-Extended dataset:
 
-- **TaiLL-Me+claude.csv**: TaiLL-Me with Claude Opus 4 LLM
+- **TaiLL-Me+claude.csv**: TaiLL-Me with Claude Sonnet 4.5 LLM
 - **TaiLL-Me+gemini-2.5-flash-nothinking.csv**: TaiLL-Me with Gemini 2.5 Flash (no thinking mode)
 - **TaiLL-Me+gpt-5-mini.csv**: TaiLL-Me with GPT-5 Mini
 - **TaiLL-Me+qwen3-coder-plus.csv**: TaiLL-Me with Qwen3-Coder-Plus
-- **TaiLL-Me+nothing.csv**: TaiLL-Me baseline (no LLM ranking)
+- **TaiLL-Me+nothing.csv**: TaiLL-Me baseline (no LLM support)
 - **IRIS+qwen3-coder-plus.csv**: IRIS approach with Qwen3-Coder-Plus
 - **Tai-e+qwen3-coder-plus.csv**: Tai-e approach with Qwen3-Coder-Plus
 
@@ -132,7 +132,9 @@ Each CSV file contains per-project evaluation metrics including:
 - Analysis results (detected flows, true positives, false positives)
 - Performance metrics (precision, recall, F1-score)
 
-### Cost Analysis (XLSX)**TaiLL-Me_analyze_costs.xlsx**: Comprehensive cost analysis for TaiLL-Me approach across all 130 projects
+#### Cost Analysis (XLSX)
+
+- **TaiLL-Me_analyze_costs.xlsx**: Comprehensive cost analysis for TaiLL-Me approach across all 130 projects
 
 This spreadsheet includes:
 - **Project Information**: Project slug, LOC size (lines of code)
