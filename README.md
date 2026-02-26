@@ -2,7 +2,7 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18691625.svg)](https://doi.org/10.5281/zenodo.18691625)
 
-The complete dataset with experimental data is available at: Hu, X. (2026). *CWE-Bench-Java-Extended: A Java Vulnerability Benchmark Dataset* [Data set]. Zenodo. https://doi.org/10.5281/zenodo.18691625
+The complete dataset with full experimental data is available at: Hu, X. (2026). *CWE-Bench-Java-Extended: A Java Vulnerability Benchmark Dataset* [Data set]. Zenodo. https://doi.org/10.5281/zenodo.18691625
 
 A comprehensive Java vulnerability benchmark dataset containing **130 vulnerabilities** across **12 CWE categories** from **103 real-world projects**, enabling realistic evaluation of Java vulnerability detection approaches.
 
@@ -76,7 +76,7 @@ Each row in `data/project_info.csv` looks like the example above. We now get int
 Each row in `data/fix_info.csv` looks like the following.
 
 | project_slug                         | cve           | github_username | github_repository_name | commit                                                       | file                                                         | class                 | class_start | class_end | method                  | method_start | method_end | signature                                        |
-| ------------------------------------ | ------------- | --------------- | ---------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | --------------------- | ----------- | --------- | ----------------------- | ------------ | ---------- | ------------------------------------------------ |
+| ------------------------------------ | ------------- | --------------- | ---------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | --------------------- | ----------- | --------- | ----------------------- | ------------ | ---------- | ----------------------------------------- |
 | perwendel__spark_CVE-2018-9159_2.7.1 | CVE-2018-9159 | perwendel       | spark                  | `030e9d00125cbd1ad759668f85488aba1019c668;a221a864db28eb736d36041df2fa6eb8839fc5cd;ce9e11517eca69e58ed4378d1e47a02bd06863cc` | `src/main/java/spark/resource/ClassPathResource.java` | `ClassPathResource` | 41         | 252      | `ClassPathResource` | 75         | 86       | `ClassPathResource(String,ClassLoader)` |
 
 - `project_slug`: the unique identifier of each project
@@ -90,3 +90,35 @@ Each row in `data/fix_info.csv` looks like the following.
 - `method`: the name of the method that is fixed
 - `method_start`, `method_end`: the start and end line number of the method. Same as above, some entries may have this field empty
 - `signature`: the signature of the method. Note that we might have multiple overloaded methods with the same name but with different signatures
+
+## Evaluation Results
+
+The `experiments/results/` directory contains evaluation results and cost analysis. The complete experimental data (including IRIS, Tai-e, and TaiLL-Me analysis outputs) is available in the full dataset on Zenodo.
+
+### Evaluation Results (CSV)
+
+Comparative evaluation results for different approaches on the CWE-Bench-Java-Extended dataset:
+
+- **TaiLL-Me+claude.csv**: TaiLL-Me with Claude Opus 4 LLM
+- **TaiLL-Me+gemini-2.5-flash-nothinking.csv**: TaiLL-Me with Gemini 2.5 Flash (no thinking mode)
+- **TaiLL-Me+gpt-5-mini.csv**: TaiLL-Me with GPT-5 Mini
+- **TaiLL-Me+qwen3-coder-plus.csv**: TaiLL-Me with Qwen3-Coder-Plus
+- **TaiLL-Me+nothing.csv**: TaiLL-Me baseline (no LLM ranking)
+- **IRIS+qwen3-coder-plus.csv**: IRIS approach with Qwen3-Coder-Plus
+- **Tai-e+qwen3-coder-plus.csv**: Tai-e approach with Qwen3-Coder-Plus
+
+Each CSV file contains per-project evaluation metrics including:
+- Project identification (project_slug, CVE ID, CWE ID)
+- Analysis results (detected flows, true positives, false positives)
+- Performance metrics (precision, recall, F1-score)
+
+### Cost Analysis (XLSX)**TaiLL-Me_analyze_costs.xlsx**: Comprehensive cost analysis for TaiLL-Me approach across all 130 projects
+
+This spreadsheet includes:
+- **Project Information**: Project slug, LOC size (lines of code)
+- **LLM Analysis Flows**: Number of taint flows analyzed by each LLM (Claude, Gemini, GPT-5, Qwen3)
+- **LLM API Calls**: Number of API calls made to each LLM service
+- **Token Costs**: Estimated token consumption for each LLM (input + output tokens)
+- **Total Costs**: Aggregated analysis costs per project and overall totals
+
+The cost analysis provides insights into the computational resources and API costs required for large-scale vulnerability detection using LLM-assisted taint analysis.
