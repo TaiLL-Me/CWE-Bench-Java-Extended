@@ -137,6 +137,7 @@ This spreadsheet includes:
 - **LLM Analysis Flows**: Number of taint flows analyzed by each LLM (Claude, Gemini, GPT-5, Qwen3)
 - **LLM API Calls**: Number of API calls made to each LLM service
 - **Token Costs**: Estimated token consumption for each LLM (input + output tokens)
+- **Analyze Time**: Time spent on analysis for each LLM
 - **Total Costs**: Aggregated analysis costs per project and overall totals
 
 The cost analysis provides insights into the computational resources and API costs required for large-scale vulnerability detection using LLM-assisted taint analysis.
