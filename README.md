@@ -1,23 +1,20 @@
 # CWE-Bench-Java-Extended
 
-A comprehensive Java vulnerability benchmark dataset containing **130 vulnerabilities** across **12 CWE categories** from **103 real-world projects**, enabling realistic evaluation of Java vulnerability detection approaches.
+A comprehensive Java vulnerability benchmark dataset containing **130 vulnerabilities** across **10 CWE categories** from **100 real-world projects**, enabling realistic evaluation of Java vulnerability detection approaches.
 
 | CWE-ID  | CVE Count |
 | ------- | --------- |
-| CWE-20  | 1         |
-| CWE-22  | 45        |
-| CWE-73  | 1         |
-| CWE-74  | 5         |
-| CWE-78  | 12        |
+| CWE-22  | 40        |
+| CWE-73  | 5         |
+| CWE-74  | 6         |
+| CWE-78  | 11        |
 | CWE-79  | 10        |
-| CWE-89  | 4         |
+| CWE-89  | 7         |
 | CWE-94  | 11        |
-| CWE-284 | 1         |
 | CWE-502 | 14        |
 | CWE-611 | 15        |
 | CWE-918 | 11        |
 | Total   | 130       |
-
 
 ## Project Identifier
 
@@ -71,9 +68,9 @@ Each row in `data/project_info.csv` looks like the example above. We now get int
 
 Each row in `data/fix_info.csv` looks like the following.
 
-| project_slug                         | cve           | github_username | github_repository_name | commit                                                       | file                                                         | class                 | class_start | class_end | method                  | method_start | method_end | signature                                        |
-| ------------------------------------ | ------------- | --------------- | ---------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | --------------------- | ----------- | --------- | ----------------------- | ------------ | ---------- | ----------------------------------------- |
-| perwendel__spark_CVE-2018-9159_2.7.1 | CVE-2018-9159 | perwendel       | spark                  | `030e9d00125cbd1ad759668f85488aba1019c668;a221a864db28eb736d36041df2fa6eb8839fc5cd;ce9e11517eca69e58ed4378d1e47a02bd06863cc` | `src/main/java/spark/resource/ClassPathResource.java` | `ClassPathResource` | 41         | 252      | `ClassPathResource` | 75         | 86       | `ClassPathResource(String,ClassLoader)` |
+| project_slug                         | cve           | github_username | github_repository_name | commit                                                       | file                                                  | class               | class_start | class_end | method              | method_start | method_end | signature                               |
+| ------------------------------------ | ------------- | --------------- | ---------------------- | ------------------------------------------------------------ | ----------------------------------------------------- | ------------------- | ----------- | --------- | ------------------- | ------------ | ---------- | --------------------------------------- |
+| perwendel__spark_CVE-2018-9159_2.7.1 | CVE-2018-9159 | perwendel       | spark                  | `030e9d00125cbd1ad759668f85488aba1019c668;a221a864db28eb736d36041df2fa6eb8839fc5cd;ce9e11517eca69e58ed4378d1e47a02bd06863cc` | `src/main/java/spark/resource/ClassPathResource.java` | `ClassPathResource` | 41          | 252       | `ClassPathResource` | 75           | 86         | `ClassPathResource(String,ClassLoader)` |
 
 - `project_slug`: the unique identifier of each project
 - `cve_id`: the CVE id
@@ -104,6 +101,7 @@ Comparative evaluation results for different approaches on the CWE-Bench-Java-Ex
 - **Tai-e+qwen3-coder-plus.csv**: Tai-e approach with Qwen3-Coder-Plus
 
 Each CSV file contains per-project evaluation metrics including:
+
 - Project identification (project_slug, CVE ID, CWE ID)
 - Analysis results (detected flows, true positives, false positives)
 - Performance metrics (precision, recall, F1-score)
@@ -113,6 +111,7 @@ Each CSV file contains per-project evaluation metrics including:
 - **TaiLL-Me_analyze_costs.xlsx**: Comprehensive cost analysis for TaiLL-Me approach across all 130 projects
 
 This spreadsheet includes:
+
 - **Project Information**: Project slug, LOC size (lines of code)
 - **LLM Analysis Flows**: Number of taint flows analyzed by each LLM (Claude, Gemini, GPT-5, Qwen3)
 - **LLM API Calls**: Number of API calls made to each LLM service
